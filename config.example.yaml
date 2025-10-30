@@ -1,0 +1,41 @@
+telegram:
+  api_id: 12345678  # Получить на https://my.telegram.org
+  api_hash: "your_api_hash_here"
+  phone: "+7XXXXXXXXXX"  # Ваш номер телефона
+  session_name: "auto_booking_session"
+
+bot:
+  username: "your_bot_username"  # Username бота без @
+  sms_trigger_text: "Появились новые перевозки"
+
+booking:
+  target_time: "11:30:00"  # Время начала бронирования
+  preparation_time_seconds: 60  # Начать подготовку за 60 сек
+  monitoring_start_seconds: 10  # Начать мониторинг за 10 сек
+  sms_reaction_time_ms: 50  # Целевое время реакции на SMS
+
+targets:
+  - type: "прямые"
+    cities:
+      - "Челябинск"
+      - "Екатеринбург"
+    priority: 1
+  
+  - type: "магистральные"
+    cities:
+      - "Москва"
+      - "Казань"
+    priority: 2
+
+performance:
+  sms_to_start_ms: 50  # Целевое время: SMS → /start
+  start_to_select_ms: 50  # Целевое время: /start → выбор
+  select_to_confirm_ms: 30  # Целевое время: выбор → подтверждение
+  max_retries: 3  # Максимальное число повторных попыток
+  connection_timeout: 10  # Таймаут соединения (сек)
+  polling_interval_ms: 30  # Интервал проверки сообщений (мс)
+
+notifications:
+  telegram_notify: true  # Отправлять уведомления в Telegram
+  notify_user_id: null  # ID пользователя для уведомлений (или null)
+  sound_alert: true  # Звуковые уведомления
