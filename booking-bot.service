@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Booking Bot
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+WorkingDirectory=/path/to/aprel
+Environment="PATH=/path/to/aprel/venv/bin"
+ExecStart=/path/to/aprel/venv/bin/python /path/to/aprel/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
