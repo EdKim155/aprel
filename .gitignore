@@ -51,3 +51,11 @@ dump.rdb
 # OS
 .DS_Store
 Thumbs.db
+
+# Telegram Sessions
+sessions/
+*.session
+*.session-journal
+
+# Configuration
+config.yaml
